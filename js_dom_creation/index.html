@@ -41,10 +41,26 @@
     <script>
         $(document).ready(function () {
             //playground 1 code
-
+            var h1 = $("<h1>").text('I am a heading');
+            var first_p = $("<p>").text('This is an awesome paragraph');
+            var second_p = $("<p>").text('This has red text').css("color", "red");
+            $("#playground1").append(h1, first_p, second_p);
             //playground 2 code
-
+            var div1 = $("<div>").addclass('awesome_class').text('Here is some awesome div text');
+            var div2 = $("<div>").addclass('awesome_class').attr('my_awesome_div2').text('Here is MORE awesome div text');
+            var div3 = $("<div>").addclass('awesome_class').attr('my_awesome_class').html('Here is <strong>EVEN MORE</strong> awesome div text');
+            $("#playground2").append(div1, div2, div3);
             //playground 3 code
+            var ul = ('<ul>').addclass('neato');
+            var li1 = $('<li>').text('Link 1');
+            var li2 = $('<li>').text('Link 2');
+            var li3 = $('<li>').text('Link 3');
+            var figure = ('<figure>').addclass('awesome_picture');
+            var img = $('<img src="http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg">');
+            var figcap = ('<figcaption>').html('That\'s right, <span class="bold_text">you are</span></figcaption>');
+            $('#playground3').append(ul, firgure);
+            $('ul').append(li1, li2, li3);
+            $('figure').append(img, figcap);
         });
     </script>
 </head>
