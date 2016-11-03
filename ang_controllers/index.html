@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <title>Angular Controllers</title>
     <!-- Add the AngularJS CDN below -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 </head>
-<body>
+<body ng-app="myApp">
+<div ng-controller="formController as fc">
+    <input type="text" ng-model="fc.form.fName">
+    <input type="text" ng-model="fc.form.lName">
+    <input type="text" ng-model="fc.form.email">
+    <textarea type="text" ng-model="fc.form.comments"></textarea>
+    <button ng-click="fc.addForm()">Add</button>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</div>
 
+<script>
+    var myApp = angular.module("myApp", []);
+
+    app.controller("fromController", function(){
+        this.form = {};
+        this.formArray = [];
+
+        this.addForm = funciton(){
+         this.formArray.push(this.form);
+        this.form = {};
+        }
+
+    });
+
+
+</script>
 </body>
 </html>
